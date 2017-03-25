@@ -1,0 +1,33 @@
+clear all
+x1=randi([1 6]);
+x2=randi([1 6]);
+fid1= fopen('part_a.txt','w')
+
+fprintf(fid1,'Two random numbers betwee 1 and 6 are ------->');
+
+fprintf(fid1,'%d %d \n',x1,x2);
+fclose(fid1)
+
+%part b starts from here
+fid= fopen('dice.txt','w')
+
+
+N=10^5;
+sum=[];
+for j=1:N
+
+x(j,1)=randi([1 6]);
+x(j,2)=randi([1 6]);
+
+end
+for i=1:N
+if x(i,1)==6 & x(i,2)==6
+    m=1;
+    sum=[sum;m];
+
+end
+
+end
+p=length(sum)/N;
+fprintf(fid,'fraction of times we get double six ------->');
+fprintf(fid,'%6.10f\n',p);
